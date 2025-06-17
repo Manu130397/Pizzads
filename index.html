@@ -3,536 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mamma Mia Pizzeria - Artisan Pizza Since 1985</title>
+    <title>Pizzería Cano - Pizza Casera desde 1999</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Global Styles */
-        :root {
-            --primary-color: #e63946;
-            --secondary-color: #f1faee;
-            --accent-color: #a8dadc;
-            --dark-color: #1d3557;
-            --light-color: #f8f9fa;
-            --text-color: #333;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-color);
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
-        img {
-            max-width: 100%;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background: #c1121f;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark-color);
-            text-align: center;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
-        
-        .section-padding {
-            padding: 80px 0;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--dark-color);
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-        }
-        
-        .logo span {
-            color: var(--primary-color);
-        }
-        
-        .nav-menu {
-            display: flex;
-        }
-        
-        .nav-menu li {
-            margin-left: 30px;
-        }
-        
-        .nav-menu a {
-            color: white;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--primary-color);
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            margin-top: 0;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        
-        /* About Section */
-        .about {
-            background-color: var(--secondary-color);
-        }
-        
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-image img {
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Menu Section */
-        .menu-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .menu-item {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .menu-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .menu-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .menu-item-content {
-            padding: 20px;
-        }
-        
-        .menu-item-title {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        
-        .menu-item-title h3 {
-            font-size: 1.3rem;
-            color: var(--dark-color);
-        }
-        
-        .menu-item-title span {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-        
-        /* Gallery Section */
-        .gallery {
-            background-color: var(--secondary-color);
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 50px;
-        }
-        
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            height: 250px;
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        /* Testimonials Section */
-        .testimonials-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 50px;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            max-width: 350px;
-            position: relative;
-        }
-        
-        .testimonial::before {
-            content: '"';
-            font-size: 5rem;
-            color: var(--accent-color);
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            line-height: 1;
-            opacity: 0.3;
-        }
-        
-        .testimonial p {
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .testimonial-author img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            margin-bottom: 5px;
-            color: var(--dark-color);
-        }
-        
-        .author-info span {
-            color: var(--primary-color);
-            font-size: 0.9rem;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background-color: var(--secondary-color);
-        }
-        
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        
-        .contact-info, .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-details div {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .contact-details i {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--dark-color);
-            color: white;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 16px;
-        }
-        
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-        }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .footer-logo span {
-            color: var(--primary-color);
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links a {
-            color: white;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .copyright {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: var(--dark-color);
-                flex-direction: column;
-                align-items: center;
-                padding-top: 40px;
-                transition: left 0.3s ease;
-            }
-            
-            .nav-menu.active {
-                left: 0;
-            }
-            
-            .nav-menu li {
-                margin: 15px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .section-padding {
-                padding: 60px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Mamma <span>Mia</span></a>
+            <img src="img/pizza.png" height="50px" width="50px"> 
+            <a href="#" class="logo">Pizzería <span>Cano</span></a>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Acerca de nosotros</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#gallery">Galería</a></li>
+                <li><a href="#testimonials">Testimonios</a></li>
+                <li><a href="#contact">Contacto</a></li>
             </ul>
         </div>
     </header>
@@ -541,9 +31,9 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Authentic Italian Pizza</h1>
-                <p>Handcrafted with love since 1985 using traditional recipes and the finest ingredients</p>
-                <a href="#menu" class="btn">View Our Menu</a>
+                <h1>Pizzería Cano</h1>
+                <p>Pizza casera y deliciosa, la mejor desde 1999.</p>
+                <a href="#menu" class="btn">Consulta nuestro menú</a>
             </div>
         </div>
     </section>
@@ -551,13 +41,13 @@
     <!-- About Section -->
     <section class="about section-padding" id="about">
         <div class="container">
-            <h2 class="section-title">Our Story</h2>
+            <h2 class="section-title">Nuestra historia</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Founded in 1985 by Italian immigrant Giovanni Rossi, Mamma Mia Pizzeria has been serving authentic Neapolitan-style pizza to the community for over three decades.</p>
-                    <p>Our secret lies in our traditional recipes passed down through generations, our wood-fired brick oven imported from Italy, and our commitment to using only the freshest, highest-quality ingredients.</p>
-                    <p>Every pizza is hand-tossed and cooked to perfection at 900°F for just 90 seconds, creating that signature charred crust and bubbly cheese that pizza lovers crave.</p>
-                    <a href="#contact" class="btn">Visit Us</a>
+                    <p>Hace 26 años se comenzó con la elaboración de las pizzas artesanales, siendo un hobbie y una forma adicional de obtener ingresos para la familia Cano. Sin embargo, las pizzas solo se elaboraban por pedidos de contratos para eventos o fechas especiales y el contacto era directamente con la familia.</p>
+                    <p>El negocio de Pizzas Cano ofrece un producto innovador en el mercado de la región, ya que ofrece una pizza de tamaño individual y se caracteriza por la elaboración de manera artesanal y satisfacción por la comida hecha a mano, sus precios son accesibles, tienen poco tiempo de almacenamiento hasta que llegan al cliente final y utilizan productos frescos y de la más alta calidad, lo que genera una ventaja competitiva con otras pizzerías artesanales o restaurantes de la zona. </p>
+                    <p>Actualmente las pizzas se elaboran en el domicilio del dueño y es un negocio que tiene 2 años operando en el mercado. Actualmente, se comercializan alrededor de 2,000 pizzas al mes, siendo las variedades de hawaiana y pepperoni las de mayor demanda diaria, asimismo es importante mencionar que el principal canal de ventas se centra en la comunicación telefónica y la venta directa en las diversas comunidades de la ciudad de Valle de Santiago.</p>
+                    <a href="#contact" class="btn">¡Visítanos!</a>
                 </div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Pizza chef preparing dough">
@@ -566,21 +56,21 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
+    <!-- Menú -->
     <section class="menu section-padding" id="menu">
         <div class="container">
-            <h2 class="section-title">Our Specialties</h2>
-            <p class="text-center" style="max-width: 700px; margin: 0 auto 40px;">All pizzas are 12" and made with our signature hand-tossed dough, San Marzano tomato sauce, and fresh mozzarella</p>
-            
+            <h2 class="section-title">Nuestras especialidades</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 40px;">Todas nuestras pizzas son de 24 cm. de diámetro y hechas con nuestra característica masa casera hecha a mano, salsa de tomate y mozarella fresco.</p>
+        
             <div class="menu-items">
                 <div class="menu-item">
                     <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Margherita Pizza">
                     <div class="menu-item-content">
                         <div class="menu-item-title">
-                            <h3>Margherita</h3>
-                            <span>$14.99</span>
+                            <h3>Margarita</h3>
+                            <span>$129.99</span>
                         </div>
-                        <p>The classic - tomato sauce, fresh mozzarella, basil leaves, and a drizzle of olive oil</p>
+                        <p>¡La clásica! Salsa de tomate, queso mozzarella, albahaca y un toque de aceite de oliva.</p>
                     </div>
                 </div>
                 
@@ -589,11 +79,19 @@
                     <div class="menu-item-content">
                         <div class="menu-item-title">
                             <h3>Pepperoni</h3>
-                            <span>$16.99</span>
+                            <span>$139.99</span>
                         </div>
-                        <p>Tomato sauce, mozzarella, and generous portions of spicy pepperoni</p>
+                        <p>Salsa de tomate, queso mozzarella y una generosa porción de pepperoni.</p>
                     </div>
                 </div>
                 
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-159585434162
+               <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1544982503-9f984c14501a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Pepperoni Pizza">
+                    <div class="menu-item-content">
+                        <div class="menu-item-title">
+                            <h3>Hawaiana</h3>
+                            <span>$139.99</span>
+                        </div>
+                        <p>Salsa de tomate, jamón y piña.</p>
+                    </div>
+                </div>
